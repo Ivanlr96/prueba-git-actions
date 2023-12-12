@@ -1,0 +1,81 @@
+/* @import url */
+p{
+    color: wheat;
+ 
+}
+body {
+    background-image: url('../assets/imgs/Morocco-desert-sunset-red-sky_1280x1024.jpg');
+    /* cubrir toda el área del body */
+    background-size: cover;
+    /* Evitar que la imagen se repita */
+    background-repeat: no-repeat;
+    /* Hacer que la imagen esté fija */
+    background-attachment: fixed;
+}
+
+@keyframes moverImagen {
+    from {
+        /* Traslada el eje x */
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(500%)
+    }
+}
+ #miCochecito{
+    width: 750px;
+    height: 300px;
+    background-image: url('../assets/imgs/cochecito.png');
+    background-size: cover;
+    animation: moverImagen 10s linear infinite;
+ }
+ .ola {
+    color: blue;
+    animation: ola 2s ease-in-out infinite;
+ 
+ }
+ h1 {
+    position: absolute;
+    font-size: 6rem;
+ }
+
+ .border {
+    color: black;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, 1px 1px 0 white, -1px 1px 0 white;
+ }
+
+ @keyframes ola {
+ 
+    0%,
+    100% {
+        clip-path: polygon(0% 47%, 10% 48%, 33% 54%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+    }
+ 
+    50% {
+        clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+    }
+}
+
+span {
+    display: block;
+    font-family: monospace;
+    white-space: nowrap;
+    color: wheat;
+    border-right: 4px solid;
+    width: 54ch;
+    animation: writting 4s steps(54) 0.5s forwards, blink 500ms infinite alternate 4s;
+    overflow: hidden;
+    font-size: 3em;
+}
+
+@keyframes writting {
+from {
+    width: 0;
+}
+}
+
+@keyframes blink {
+50% {
+    border-color: transparent;
+}
+}
